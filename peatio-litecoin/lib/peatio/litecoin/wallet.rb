@@ -3,6 +3,7 @@ module Peatio
     class Wallet < Peatio::Wallet::Abstract
 
       DEFAULT_FEATURES = { skip_deposit_collection: false }.freeze
+      SUPPORTED_FEATURES = %i[skip_deposit_collection].freeze
 
       def initialize(custom_features = {})
         @features = DEFAULT_FEATURES.merge(custom_features).slice(*SUPPORTED_FEATURES)
